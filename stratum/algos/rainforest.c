@@ -35,6 +35,13 @@
 #include <string.h>
 #include <stdio.h>
 
+#if (WINDOWS)
+/* sizeof(unsigned long) = 4 for MinGW64 */
+typedef unsigned long long ulong;
+#else
+typedef unsigned long ulong;
+#endif
+
 //#define DEBUG_ALGO
 
 /* Rijndael's substitution box for sub_bytes step */
